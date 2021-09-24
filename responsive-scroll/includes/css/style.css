@@ -1,0 +1,235 @@
+:root {
+  --color-white: #ffffff;
+  --color-dark: #3f3f44;
+  --color-darker: #171717;
+  --color-primary: #df2e2e;
+  --radius: 0.3rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/** GLOBAL STYLES -----------------------------------------------------*/
+
+html,
+body {
+  font-family: "Raleway", sans-serif;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+header {
+  min-height: 100vh;
+  background: linear-gradient(rgba(68, 73, 65, 0.5), rgba(0, 0, 0, 0.7)),
+    url(../img/banner.jpg) center/cover no-repeat;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/** ID SECTION STYLES -----------------------------------------------------*/
+#about,
+#services,
+#projects {
+  height: 100vh;
+  border-bottom: 1px solid #171717;
+}
+
+/** FIXED NAV -----------------------------------------------------*/
+/*!! USED IN JS  */
+.fixed-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-white);
+  box-shadow: 0px 10px 16px 0px rgba(68, 73, 65, 0.5);
+  -webkit-box-shadow: 0px 10px 16px 0px rgba(68, 73, 65, 0.5);
+  -moz-box-shadow: 0px 10px 16px 0px rgba(68, 73, 65, 0.5);
+}
+
+.fixed-nav .links-container .links li a {
+  font-weight: 900;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  color: var(--color-dark);
+}
+
+.fixed-nav .nav-container {
+  padding: 0;
+  background: transparent;
+  color: var(--color-dark);
+}
+
+/** MOBILE DESIGN -----------------------------------------------------*/
+/* !! for mobile version */
+/* navigation */
+/** default bg and padding */
+nav {
+  background: var(--color-white);
+  padding: 1rem 1.5rem;
+}
+
+/* nav container */
+/** default spacing */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* links */
+.links-container {
+  transition: 0.4s;
+  overflow: hidden; /** use to hide the links */
+  height: 0;
+}
+
+.links-container .links li {
+  padding: 1rem 0;
+}
+
+.links-container .links li a {
+  font-weight: 900;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  color: var(--color-dark);
+}
+
+.links-container .links li a:hover {
+  transition: 0.3s;
+  color: var(--color-primary);
+}
+
+/* burger */
+.burger button {
+  font-size: 1.5rem;
+  color: var(--color-darker);
+  cursor: pointer;
+  background-color: transparent;
+  border: transparent;
+}
+
+.burger button:hover {
+  transition: 0.3s;
+  color: var(--color-primary);
+}
+
+/* banner */
+.banner {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.banner .container {
+  width: 50%;
+  color: var(--color-white);
+}
+
+.banner .container h2,
+p {
+  margin: 0 0 1rem 0;
+}
+
+/* buttons */
+.btn {
+  color: var(--color-white);
+  font-weight: 800;
+  padding: 0.8rem 1rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  border: 2px solid var(--color-primary);
+}
+
+.btn-white {
+  transition: 0.4s;
+  border-radius: var(--radius);
+}
+
+.btn-white:hover {
+  background-color: var(--color-white);
+  color: var(--color-darker);
+  border: 2px solid var(--color-white);
+}
+
+/** DESKTOP DESIGN -----------------------------------------------------*/
+/* !! for desktop version */
+/* media query */
+@media screen and (min-width: 800px) {
+  /* navigation */
+  /* default bg padding and spacing */
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: transparent;
+    padding: 0;
+    box-shadow: 0;
+  }
+
+  /* nav container */
+  .nav-container {
+    padding: 0;
+    background: transparent;
+    color: var(--color-white);
+  }
+
+  /* burger */
+  .burger {
+    display: none;
+  }
+
+  /* links */
+  .links-container {
+    width: auto !important;
+    height: auto !important; /* need this to make nav normal size */
+    background: transparent;
+    overflow-x: auto;
+  }
+
+  .links-container .links {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .links-container .links li a {
+    color: var(--color-white);
+    padding: 0 1rem;
+  }
+}
+
+/** STYLING -----------------------------------------------------*/
+.top-link {
+  display: none;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: 2rem;
+  padding: 0 1rem;
+  animation: bounce 2s ease-in-out infinite;
+  border-radius: var(--radius);
+}
+
+/** KEYFRAMES -----------------------------------------------------*/
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,132 @@
+:root {
+  --color-accent: #f1f5f8;
+  --color-dark: #293b5f;
+  --color-primary: lightcoral;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ----------------------------------------------------------------------H T M L  E L E M E N T S------------------------------------------------------------------------- */
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-accent);
+}
+
+/* ----------------------------------------------------------------------N A V I G A T I O N------------------------------------------------------------------------- */
+nav {
+  position: fixed;
+  height: 100vh;
+  width: 18%;
+  background: var(--color-dark);
+  transition: 0.4s;
+  transform: translateX(
+    -100%
+  ); /* MAKE THE SIDEBAR GOES TO THE LEFT OF THE BODY*/
+}
+
+.navLinks {
+  margin: 3em 0 0 0;
+}
+
+.navLinks li {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  opacity: 0; /* NEED THIS FOR THE KEYFRAMES TO WORK PROPERLY */
+}
+
+.navLinks li a {
+  display: block;
+  width: 95%;
+  padding: 1em;
+  border-radius: 0.2rem;
+}
+
+.navLinks li a:hover {
+  background: var(--color-primary);
+  transition: 0.4s;
+}
+
+.title {
+  width: 80%;
+  color: var(--color-accent);
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  letter-spacing: 0.4em;
+  margin: 2em auto 0 auto;
+  padding: 0 0 3em 0;
+  border-bottom: 1px var(--color-accent) solid;
+}
+/* ----------------------------------------------------------------------B U R G E R------------------------------------------------------------------------- */
+.burger {
+  /*   position: fixed;
+  left: 0; */
+  position: fixed;
+  right: 0;
+  padding: 0.5em 1em;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger a {
+  text-align: center;
+  font-size: 1.6rem;
+  color: lightcoral;
+}
+
+.burgerToggle {
+  transform: rotate(90deg);
+}
+
+/* ----------------------------------------------------------------------C O N T E N T------------------------------------------------------------------------- */
+.content {
+  width: 82%;
+  float: right;
+  padding: 1em 1.5em;
+  transition: 0.4s;
+  margin: 2rem 0 0 0;
+}
+/* ----------------------------------------------------------------------M E D I A  Q U E R Y------------------------------------------------------------------------- */
+@media screen and (max-width: 1440px) {
+  nav {
+    width: 20%;
+  }
+  .content {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  nav {
+    width: 26%;
+  }
+  .content {
+    width: 74%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    width: 30%;
+  }
+  .content {
+    width: 70%;
+  }
+}
+
+/* ----------------------------------------------------------------------K E Y F R A M E S------------------------------------------------------------------------- */
+@keyframes navLinksFade {
+  100% {
+    opacity: 1;
+  }
+}

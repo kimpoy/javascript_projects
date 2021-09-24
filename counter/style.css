@@ -1,0 +1,62 @@
+:root {
+  --color-accent: #f1f5f8;
+  --color-dark: #171717;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-accent);
+}
+
+main {
+  height: 90vh;
+  display: flex;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+#value {
+  font-weight: 800;
+  font-size: 4rem;
+  margin: 1rem 0 1rem 0;
+  color: var(--color-dark);
+}
+
+.container {
+  width: 80%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-container {
+  display: flex;
+  margin: 0 1rem;
+}
+
+.btn {
+  width: 5.8rem;
+  height: 2.4rem;
+  margin-inline: 0.5rem;
+  border-radius: 0.3rem;
+  text-transform: uppercase;
+  background-color: var(--color-accent);
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: var(--color-accent);
+  background-color: var(--color-dark);
+  transition-duration: 0.3s;
+}
